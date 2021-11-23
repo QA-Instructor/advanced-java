@@ -8,11 +8,11 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-//        substitutionExampleA();
+        substitutionExampleA();
 //        substitutionExampleB();
 //        substitutionExampleC();
 //        substitutionExampleD();
-        substitutionExampleE();
+//        substitutionExampleE();
     }
 
     static void substitutionExampleA(){
@@ -27,25 +27,24 @@ public class Main {
     }
 
     static void substitutionExampleB(){
-//        Because of Liskov substitution, office and house instances can be added
-//        to a list of type BuildingStructure
-        List<BuildingStructure> structures = new ArrayList<>();
-        structures.add(new BuildingStructure());
-        structures.add(new Office());
-        structures.add(new House());
+//        ToDo A
+//        1. Create a list of building structures called 'structures'
+//        2. Add 3 new object instances: 1 buildingStructure, 1 office and 1 house
+//        3. Call the printBuildings method passing in 'structures'
+//        4. Will the compiler complain about this method call or not? Why?
 
-        printBuildings(structures);
+//        YOUR CODE HERE
     }
 
     static void substitutionExampleC(){
-//        Liskov substitution does not allow for the substitution of  a list of a derived type
-//        where a list of a base type is expected
-        List<Office> structures = new ArrayList<>();
-        structures.add(new Office());
-        structures.add(new Office());
+//        ToDo B
+//        1. Create a list of offices called 'structures'
+//        2. Add 2 new office instances to the list
+//        3. Call the printBuildings method passing in 'structures'
+//        4. Will the compiler complain about this method call or not? Why?
 
-        System.out.println("A list of offices is not a subtype of a list of building structures");
-//        printBuildings(structures);
+//        YOUR CODE HERE
+
     }
 
     static void substitutionExampleD(){

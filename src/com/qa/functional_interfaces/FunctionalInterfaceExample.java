@@ -1,6 +1,8 @@
 package com.qa.functional_interfaces;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class FunctionalInterfaceExample {
 
@@ -9,6 +11,7 @@ public class FunctionalInterfaceExample {
 //        exampleB();
 //        exampleC();
 //        exampleD();
+//        exampleE();
     }
 
     public static void exampleA(){
@@ -45,7 +48,7 @@ public class FunctionalInterfaceExample {
 // be replaced with a method reference
 // Method references use the :: operator (aka Method Reference Delimiter)
 // target of reference (receiver) :: name of method (or constructor)
-// A method reference refers to the method but doesn't invoke it (the forEach does the invocation)
+// A method reference refers to the method but doesn't invoke it (the forEach does the invocation here)
 // They refer to methods of existing classes or objects whereas a lambda expression allows us to
 // define an anonymous method and treat it as an instance of a functional interface
 
@@ -61,6 +64,7 @@ public class FunctionalInterfaceExample {
         arrayList.forEach(System.out::println);
     }
 
+//    Homework
     public static void exampleD() {
 // Constructor references
 // target of reference (receiver) :: name of method (or constructor)
@@ -81,5 +85,16 @@ public class FunctionalInterfaceExample {
 
         System.out.println("Constructor has yet to be called");
         System.out.println(empWithName.get("Rob"));
+    }
+
+    public static void exampleE(){
+//  ToDo A
+//        1. Create a list of integers called intList with the values of 1 to 5
+//        2. Using the replaceAll method and a lambda function, add one to each value
+//        3. Print intList
+
+//        YOUR CODE HERE
+
+
     }
 }

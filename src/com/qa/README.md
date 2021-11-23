@@ -17,8 +17,8 @@ Second:
 Liskov Substitution Principle
 
         substitutionExampleA();
-        substitutionExampleB();
-        substitutionExampleC();
+        substitutionExampleB(); - delegate exercise
+        substitutionExampleC(); - delegate exercise
         substitutionExampleD();
         substitutionExampleE();
           
@@ -26,9 +26,9 @@ Liskov Substitution Principle
 
 Optionals
 
-        main
+        main; - delegate exercise: equality test
         orElseExample();
-        orElseEmptyExample();
+        orElseEmptyExample(); - delegate exercise
         
 Homework:
 
@@ -42,6 +42,7 @@ Functional Interfaces
         exampleB(); - lambda expression
         exampleC(); - method reference
         
+        exampleE(); - delegate exercise - lambda        
 Homework: 
         
         exampleD(); - constructor reference

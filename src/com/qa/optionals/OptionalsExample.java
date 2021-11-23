@@ -50,9 +50,12 @@ public class OptionalsExample {
         item.ifPresent(System.out::println);
 //      System.out::println is an example of a method reference
 
-        Optional<String> comparisonString = Optional.of("Hello");
-        boolean theyAreEqual = item.equals(comparisonString);
-        System.out.println(theyAreEqual ? "The strings are equal" : "The strings are different");
+//        ToDo A
+//        1. Create an optional with the value of "Hello"
+//        2. Create a boolean variable 'theyAreEqual' and assign to it the result of testing equality against item
+//        3. Use a ternary statement within a println to show a string message that describes whether the strings are the same or different
+
+// YOUR CODE HERE
 
 //      'orElse' examples: Return the value if present, otherwise return other.
 //        orElseExample();
@@ -100,22 +103,14 @@ public class OptionalsExample {
     }
 
     public static void orElseEmptyExample(){
-        // create an empty Optional
-        Optional<Integer> op = Optional.empty();
+//        ToDo B
 
-        // print value
-        System.out.println("Optional: " + op);
-        //        From Java 11 onwards, can use isEmpty() to check opposite of isPresent
-        System.out.println("Is the optional empty? " + op.isEmpty());
+        // 1. Create an empty Optional
 
-        try {
-            // orElse value
-            System.out.println("Value by orElse"
-                    + "(2022) method: "
-                    + op.orElse(2022));
-        }
-        catch (Exception e) {
-            System.out.println(e);
-        }
+        // 2. Print the value of the optional
+
+        //  3. Use isEmpty() to check opposite of isPresent and print the outcome
+
+        // 4. Use orElse to print the value 1999 if the optional is empty
     }
 }
