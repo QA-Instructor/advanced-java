@@ -3,6 +3,14 @@ package com.qa.functional_interfaces;
 // no interfaces are implemented (EmployeeEmpty or EmployeeWithName)
 
 public class Employee {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
     private String name;
 
     Employee(){
@@ -16,6 +24,6 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "name=: " + name;
+        return "Employee name is " + name;
     }
 }

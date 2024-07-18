@@ -12,8 +12,8 @@ public class GenericsExample {
     public static void main(String[] args) {
 //  Create a list, add an item to it, get the zeroth item out of the list, print to the terminal
         nonGenericListExample();
-        genericListExample();
-
+//        genericListExample();
+//
 //        nonGenericMethodExample();
 //        genericMethodExample();
 
@@ -27,8 +27,12 @@ public class GenericsExample {
         String name = (String) names.get(0);
         System.out.println("First name: " + name);
 //        Compiler is happy to let us add anything to our list. Difficult to work with if a large list
-//        names.add(7);
+        names.add(7);
+        names.add(true);
         System.out.println(names);
+//        String name2 = (String) names.get(1);
+//        String name2 = names.get(1).toString();
+//        System.out.println(name2);
     }
 
     public static void genericListExample(){
@@ -39,6 +43,7 @@ public class GenericsExample {
         System.out.println("First name: " + name2);
 //        Compiler warning when uncommented because it checks that only strings can be added
 //        names2.add(7);
+//        names2.add(String.valueOf(7));
         System.out.println(names2);
     }
 
@@ -55,7 +60,7 @@ public class GenericsExample {
         // There is no type checking - I have assigned a list of ints to a list of strings
         List<String> stringListOfInts = arrayToList(intArray, new ArrayList<>());
         // Try to get the zeroth value
-        System.out.println(intList.get(0));//okay, correct type
+        System.out.println(intList.get(0));//original intList, so okay, correct type
 //        System.out.println(stringListOfInts.get(0));//not okay, incorrect type ClassCastException
 
     }

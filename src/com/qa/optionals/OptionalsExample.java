@@ -15,10 +15,13 @@ public class OptionalsExample {
 
         Optional<String> item;
 
-        if(Math.random() >= 0.5) {
+        double randomNumber = Math.random();
+        if(randomNumber > 0.5) {
+            System.out.println("Random number is greater than 0.5: " + randomNumber);
             item =  Optional.of("Hello"); // would throw a NullPointerException if the value is null
 //          item =  Optional.ofNullable("Hello"); would return an empty Optional if value is null
         } else {
+            System.out.println("Random number is NOT greater than 0.5: " + randomNumber);
 //          Use empty() to return an empty optional instance
             item = Optional.empty();
         }

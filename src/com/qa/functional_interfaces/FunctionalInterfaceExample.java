@@ -7,9 +7,10 @@ import java.util.List;
 public class FunctionalInterfaceExample {
 
     public static void main(String[] args) {
-        exampleA();
+//        exampleA();
 //        exampleB();
 //        exampleC();
+//        exampleC2();
 //        exampleD();
 //        exampleE();
     }
@@ -51,6 +52,8 @@ public class FunctionalInterfaceExample {
 // A method reference refers to the method but doesn't invoke it (the forEach does the invocation here)
 // They refer to methods of existing classes or objects whereas a lambda expression allows us to
 // define an anonymous method and treat it as an instance of a functional interface
+// Key Takeaway: the class the method belongs to does not have to implement an interface or
+// inherit from a specific class
 
         ArrayList<Integer> arrayList = new ArrayList<>();
         arrayList.add(1);
@@ -64,17 +67,69 @@ public class FunctionalInterfaceExample {
         arrayList.forEach(System.out::println);
     }
 
+    public static void exampleC2() {
+
+        List<Employee> employees = new ArrayList<>();
+        employees.add(new Employee("Rod"));
+        employees.add(new Employee("Jane"));
+        employees.add(new Employee("Freddy"));
+        System.out.println("##### Employees before sort:");
+        employees.forEach(System.out::println);
+
+        //No method reference is used here, just a lambda
+//        The lambda derives an anonymous implementation of the Comparator<Employee> interface
+        employees.sort((e1, e2) -> e1.getName().compareTo(e2.getName()));
+        System.out.println("##### Employees after sort:");
+        employees.forEach(System.out::println);
+
+//        If you already had a class with a suitable method and implementation, you
+//        can use a method reference even without implementing the Comparator<> interface
+//        in that class
+        System.out.println("##### Add Zippy and George");
+        employees.add(new Employee("Zippy"));
+        employees.add(new Employee("George"));
+
+        System.out.println("##### Employees before second sort:");
+        employees.forEach(System.out::println);
+
+//        Use an existing class method for the comparison logic
+        Utils utils = new Utils();
+
+        employees.sort(utils::compareEmployees);
+        System.out.println("##### Employees after second sort:");
+        employees.forEach(System.out::println);
+
+        System.out.println("##### Add Bungle");
+//        The utils method could be a static method
+        employees.add(new Employee("Bungle"));
+
+        System.out.println("##### Employees before third sort:");
+        employees.forEach(System.out::println);
+
+        employees.sort(Utils::staticCompareEmployees); // staticCompareEmployees uses class name (no object instantiated)
+        System.out.println("##### Employees after third sort:");
+        employees.forEach(System.out::println);
+
+    }
+
 //    Homework
     public static void exampleD() {
 // Constructor references
+// A constructor reference is used to refer to a constructor without instantiating the named class
 // target of reference (receiver) :: name of method (or constructor)
 // A constructor / method reference refers to the method but doesn't invoke it (the 'get' does the invocation here)
+// In constructor reference expressions, instead of specifying the exact constructor, we just write 'new'
+// However, a class may have multiple constructors. In that case, the compiler checks the type of the
+// target functional interface with each of the constructors in the class, and finally chooses the best match.
+
+// Key Takeaway: The Employee class does not implement either of the interfaces referenced in this code
+// but the Employee class does have 2 constructors that match the functional interface methods
 
 //        The get method within this functional interface matches the empty constructor
         EmployeeEmpty empEmpty = Employee::new;
 
         System.out.println("Constructor has yet to be called");
-//        get will create the object instance e.g. a factory method
+//        get will create the object instance e.g. the get method is a factory method for creating employees
         Employee emp1 = empEmpty.get(); // constructor called and employee instance is returned
         System.out.println(emp1); // toString is invoked by the print statement
         System.out.println(empEmpty); // the method reference expression has an implicit lambda expression
@@ -84,7 +139,7 @@ public class FunctionalInterfaceExample {
         EmployeeWithName empWithName = Employee::new;
 
         System.out.println("Constructor has yet to be called");
-        System.out.println(empWithName.get("Rob"));
+        System.out.println(empWithName.get("Lisa"));
     }
 
     public static void exampleE(){

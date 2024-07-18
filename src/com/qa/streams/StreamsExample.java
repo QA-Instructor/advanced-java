@@ -20,8 +20,8 @@ import java.util.stream.Stream;
 public class StreamsExample {
 
     public static void main(String[] args) {
-        streamsExampleA();
-//        streamsExampleB();
+//        streamsExampleA();
+        streamsExampleB();
 //        streamsExampleC();
 //        streamsExampleD();
 //        streamsExampleE();

@@ -9,6 +9,15 @@ package com.qa.functional_interfaces;
 //  - method references
 //  - constructor references
 
+//  A Java lambda expression allows us to define an anonymous method and treat it as an instance of
+//  a functional interface
+
+//  A Java method reference allows us to do the same thing but with an existing method. A method
+//  reference refers to a method of an existing class or object
+//  The '::' is a new operator called the method reference delimiter
+//  Receiver :: methodName / constructorName
+
+
 // Lambdas represent the implementation of a functional interface
 
 @FunctionalInterface
